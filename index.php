@@ -9,8 +9,15 @@
 </head>
 <body>
     <main id="app">
-
+        <label for="stations_list"></label>
+        <select v-model="selectedStation" name="stations_list" id="stations_list">
+            <option disabled value="">Select a station</option>
+            <option v-for="station in stations" :key="station.id" :value="station.id">{{station.station_name}}</option>
+        </select>
+        <div>
+            <canvas id="chart"></canvas>
+        </div>
     </main>
-<script src="main.js"></script>
+<script type="module" src="main.js"></script>
 </body>
 </html>
